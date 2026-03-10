@@ -39,7 +39,7 @@ async def manejar_mensaje(update, context):
     usuario = update.message.from_user.username or update.message.from_user.first_name
     await context.bot.send_message(
         chat_id=ADMIN_CHAT_ID,
-        text=f"De {usuario}: {texto}"
+        text=f"{usuario}: {texto}"
     )
     await update.message.reply_text("✅ Tu mensaje fue enviado.")
 

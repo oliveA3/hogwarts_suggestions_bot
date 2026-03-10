@@ -13,8 +13,7 @@ async def start(update, context):
         "Con este bot podrás enviar mensajes a la Directiva Superior.\n"
         "Si quieres que tu mensaje sea anónimo, escribe:\n"
         "/anonimo Tu mensaje aquí\n\n"
-        "Si escribes sin /anonimo, los administradores verán tu nombre.\n\n"
-        "Siéntete libre de proponer nuevas ideas, dar sugerencias o quejarte."
+        "Si escribes sin /anonimo, la directiva verá tu nombre.\n\n"
     )
 
 
@@ -25,7 +24,7 @@ async def anonimo(update, context):
             chat_id=ADMIN_CHAT_ID,
             text=f"Mensaje anónimo: {contenido}"
         )
-        await update.message.reply_text("✅ Tu mensaje anónimo fue enviado a los administradores.")
+        await update.message.reply_text("✅ Tu mensaje anónimo fue enviado.")
     else:
         await update.message.reply_text("⚠️ Debes escribir un mensaje después de /anonimo.")
 
@@ -37,6 +36,7 @@ async def manejar_mensaje(update, context):
         chat_id=ADMIN_CHAT_ID,
         text=f"De {usuario}: {texto}"
     )
+    await update.message.reply_text("✅ Tu mensaje fue enviado.")
 
 
 def main():

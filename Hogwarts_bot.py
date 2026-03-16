@@ -54,7 +54,12 @@ def webhook():
     application.update_queue.put(update)
     return "ok"
 
+# Ruta principal para ver mensaje en navegador
+@app.route("/")
+def index():
+    return "🚀 El bot está funcionando en PythonAnywhere"
+
 # No uses run_webhook en PythonAnywhere
 if __name__ == "__main__":
-    print("Bot desplegado...")
+    print("Bot desplegado... Flask está corriendo.")
     app.run()

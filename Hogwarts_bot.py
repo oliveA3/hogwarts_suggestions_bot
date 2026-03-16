@@ -56,4 +56,5 @@ def webhook():
 
 # No uses run_webhook en PythonAnywhere
 if __name__ == "__main__":
+    print("Bot desplegado...")
     app.run()
